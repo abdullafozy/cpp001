@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int reverse(int n){
+     int rev=0 ;
+     bool negative=0;
+     if(n<0){
+     negative=1;
+     n=-n;
+     }
+     while(n>0){
+  rev = rev * 10 + (n % 10);
+  n=n/10;
+  }
+  if(negative){
+  rev=-rev;
+  }
+  return rev;
+}
+int main()
+{
+ int n;
+ cin>>n;
+ cout<<reverse(n);
+
+    return 0;
+}
