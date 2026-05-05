@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+#include<cctype>
+#include<string>
+bool isvowel(char c){
+     c=tolower(c);
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+void removee(string s){
+    for(int i=0 ;i<s.size() ;i++){
+        if( isvowel(s[i]) ){
+        // دمج النص قبل وبعد الحرف المستهدف
+            s = s.substr(0, i) + s.substr(i + 1);
+            // تقليل المؤشر لتعويض تقلص طول النص
+            i--;
+        }
+    }
+    cout<<s;
+}
+int main()
+{ 
+    string s;
+    cin>>s;
+    removee(s);
+
+    return 0 ;
+}
