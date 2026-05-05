@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+#include <string>
+#include <algorithm>
+int main()
+{
+   int arr[10];
+   for(int i=0 ;i<10 ;i++){
+       cin>>arr[i];
+   }
+   for(int i=0 ;i<9 ;i++){          //بيكرر العملية 9 مرات (علشان نضمن الترتيب الكامل)
+   for(int j=0 ;j<10-i-1 ;j++){     // يقارن كل عنصر باللي بعده وكل مرة بنقلل عدد المقارنات لأن آخر عنصر بيكون اتحط في مكانه الصح
+       if(arr[j]>arr[j+1]){
+           swap(arr[j],arr[j+1]);
+       }
+   }
+   }
+   for(int i = 0; i < 10; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
