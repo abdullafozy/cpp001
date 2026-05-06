@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+#include <string>
+    string editor(string name){
+    int commaPos=name.find(',');
+    string lastName = name.substr(0, commaPos); 
+    int startPos = commaPos + 2;
+    string firstAndMiddle = name.substr(startPos);
+    return firstAndMiddle + " " + lastName;
+    }
+    int main()
+{
+    string name;
+    getline(cin, name);
+     cout<<editor(name);
+
+    return 0;
+}
