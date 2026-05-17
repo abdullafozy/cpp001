@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, sum = 1;
+    cin >> x;
+
+    double power = 1;
+    double fact = 1;
+
+    for (int i = 1; i <= 4; i++) {
+        power *= x;     // x^i
+        fact *= i;      // i!
+
+        sum += power / fact;
+    }
+
+    cout << sum;
+
+    return 0;
+}
