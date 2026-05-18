@@ -1,21 +1,31 @@
 #include <iostream>
+
 using namespace std;
 
-int main() {
-    double x, sum = 1;
-    cin >> x;
+// دالة لحساب e^x
+double calculateExponential(double x, int n) {
+    double sum = 1.0;  // المجموع التراكمي (يبدأ بالحد الأول 1)
+    double term = 1.0; // قيمة الحد الحالي
 
-    double power = 1;
-    double fact = 1;
-
-    for (int i = 1; i <= 4; i++) {
-        power *= x;     // x^i
-        fact *= i;      // i!
-
-        sum += power / fact;
+    // Loop (Iteration) لحساب باقي الحدود
+    for (int i = 1; i <= n; i++) {
+        term *= (x / i); // تحديث الحد الحالي
+        sum += term;     // إضافته للمجموع الكلي
     }
 
-    cout << sum;
+    return sum;
+}
+
+int main() {
+    double x;
+    int n; // عدد الحدود (Iterations) - كلما زاد العدد زادت الدقة (Accuracy)
+    
+    cout << "Enter the value of x: ";
+    cin >> x;
+    cout << "Enter the number of terms (n): ";
+    cin >> n;
+
+    cout << "e^" << x << " = " << calculateExponential(x, n) << endl;
 
     return 0;
 }
