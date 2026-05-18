@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int distance;
+    cin >> distance;
+
+    int fee = 10;
+
+    if (distance > 1500) {
+
+        int extra = distance - 1500;
+
+        fee += (extra / 500) * 5;
+    }
+
+    cout << "Taxi Fee = " << fee;
+
+    return 0;
+}
